@@ -10,12 +10,15 @@ use Illuminate\Http\JsonResponse;
 
 class LogoutController extends Controller
 {
-    public function __construct() {
-        $this->middleware('auth:sanctum');
-    }
 
     public function logout(Request $request): JsonResponse
     {
-        return response()->json();
+        $request->user()->tokens()->delete();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'User logged out',
+            'data' => ''
+        ]);
     }
 }
