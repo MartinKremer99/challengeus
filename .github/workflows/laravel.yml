@@ -9,8 +9,8 @@ on:
 jobs:
   laravel-tests:
     env:
-      ADMIN_EMAIL: ${{ secret.ADMIN_EMAIL }}
-      ADMIN_PASSWORD: ${{ secret.ADMIN_PASSWORD }}
+      ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
     runs-on: ubuntu-latest
 
     defaults:
