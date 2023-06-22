@@ -32,7 +32,22 @@ class LoginTest extends TestCase
                 'user'
             ]
         ]);
-
-
     }
+
+    public function test_login_bad_input(): void
+    {
+        $response = $this->post('/api/user/login', [
+            'email' => env('ADMIN_EMAIL'),
+        ]);
+
+        $response->assertBadRequest();
+
+        $response->assertJsonStructure([
+            'status',
+            'message',
+            'data'
+        ]);
+    }
+
+
 }
