@@ -32,6 +32,10 @@ class Handler extends ExceptionHandler
 
     protected function unauthenticated($request, AuthenticationException $exception): JsonResponse
     {
-        return response()->json(['status' => 'error'], 401);
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Please login first and give the token as a bearer token',
+            'data' => ''
+        ], 401);
     }
 }
