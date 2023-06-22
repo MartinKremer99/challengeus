@@ -11,8 +11,8 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      ADMIN_EMAIL: {{secret.ADMIN_EMAIL}}
-      ADMIN_PASSWORD: {{secret.ADMIN_PASSWORD}}
+      ADMIN_EMAIL: ${{ secret.ADMIN_EMAIL }}
+      ADMIN_PASSWORD: ${{ secret.ADMIN_PASSWORD }}
     defaults:
       run:
         working-directory: ./backend
