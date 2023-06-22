@@ -8,11 +8,11 @@ on:
 
 jobs:
   laravel-tests:
-
-    runs-on: ubuntu-latest
     env:
       ADMIN_EMAIL: ${{ secret.ADMIN_EMAIL }}
       ADMIN_PASSWORD: ${{ secret.ADMIN_PASSWORD }}
+    runs-on: ubuntu-latest
+
     defaults:
       run:
         working-directory: ./backend
